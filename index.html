@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typing Animation</title>
+<style>
+    /* Basic styling */
+    body {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    /* Typing effect styling */
+    .typing-container {
+        font-size: 2em;
+        font-weight: bold;
+        color: #ffdd57; /* Golden color for text */
+        border-right: 4px solid #ffdd57;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+        animation: typing 6s steps(20) forwards, blink-caret 0.75s step-end infinite;
+    }
+
+    /* Signature styling */
+    .signature {
+        font-family: 'Brush Script MT', cursive;
+        color: #ffdd57;
+        font-size: 1.2em;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        opacity: 0;
+        animation: fadeIn 2s ease 6s forwards;
+    }
+
+    /* Keyframes for typing and blinking caret */
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 20ch; } /* Adjust length as per text */
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #ffdd57; }
+    }
+
+    /* Fade-in effect for signature */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Typing container for text -->
+<div class="typing-container" id="typing-text">Soniya is a slow typer</div>
+
+<!-- Signature at footer -->
+<div class="signature">Mr. Perfect</div>
+
+</body>
+</html>
+
